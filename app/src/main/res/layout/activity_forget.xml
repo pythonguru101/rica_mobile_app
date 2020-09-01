@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".initial.forget"
+    android:background="#0A0A0A"
+    android:padding="20dp"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@drawable/sss"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Please enter your registered mobile number.You will receive a sms that contains a five digit one time password ."
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#7988A4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+
+                <EditText
+                    android:id="@+id/mob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile no."
+                    android:inputType="phone"
+                    android:textSize="18sp"
+                    android:drawableStart="@drawable/pho"
+                    android:background="#7988A4"
+                    android:textColor="@color/box"
+                    android:textStyle="normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded"
+                android:text="GENERATE OTP"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/buttonColor"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="130dp"
+                android:text="Return to Login Screen"
+                android:textColor="#98C8FF"
+                android:onClick="returnLogin"
+                android:textSize="15dp" />
+    </LinearLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

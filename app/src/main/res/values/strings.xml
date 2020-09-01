@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mdevt</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forgot_pass"><u>Forgot Password? Click here.</u></string>
+    <string name="password_strength_weak">Weak</string>
+    <string name="password_strength_medium">Medium</string>
+    <string name="password_strength_strong">Strong</string>
+    <string name="password_strength_very_strong">Very Strong</string>
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
+</resources>

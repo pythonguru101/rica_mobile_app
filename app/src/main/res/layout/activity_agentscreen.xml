@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer1"
+    android:layout_height="match_parent"
+    tools:context=".agents.agentscreen"
+
+    android:fitsSystemWindows="true">
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigation"
+        android:foregroundGravity="left"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu1"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#0A0A0A"
+            android:onClick="hideKeyboard">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/drawer_toolbar"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Enter Registration Details :"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="SIM Card Details"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"/>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/spinnerNetwork"
+                    android:background="#7988A4"
+                    />
+
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/spinnerRegisterSim"
+                    android:background="#7988A4"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:boxBackgroundMode="outline"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/SIM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:id="@+id/result"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan your SIM"
+                    android:backgroundTint="@color/buttonColor"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/scanner"
+                    android:layout_gravity="center"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:boxBackgroundMode="outline"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Last_4digits_of_sim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Last four digits of Sim"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Identification"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    />
+               <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/spinnerID"
+                    android:background="#7988A4"
+                    />
+
+                <com.scrounger.countrycurrencypicker.library.Buttons.CountryCurrencyButton
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:country_code="ZA"
+                    android:layout_marginTop="30dp"
+                    android:background="#7988A4"
+                    app:show_currency="false" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#7988A4"
+                    android:id="@+id/dateexp"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/id_passport_expiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Passport expiry date"
+                        android:background="#7988A4"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        android:drawableEnd="@drawable/cal"
+                        android:textColor="@color/black"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Id number*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/id_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="13"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Name*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/full_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Surname*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sur_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Address"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:text="Subscriber Address (as on the proof of residence)"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Street Address*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Suburb*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sub_urb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Postal code*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/post_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="City or Town*"
+                    android:background="#7988A4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/city_town"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:background="#7988A4"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I accept  as a Rica agent that all the details on this form are valid and the proof of address and identification
+                     shown reflect the data entered here."
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/proof"
+
+                    android:layout_marginTop="10dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/yes"
+                        android:text="Yes"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/no"
+                        android:text="NO"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        />
+                </RadioGroup>
+
+
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/buttonColor"
+                    android:text="REGISTER"
+                    android:textSize="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="invisible"
+
+
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="270820200414"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

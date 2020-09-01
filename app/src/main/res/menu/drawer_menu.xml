@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Mdevt Rica Agent Role"
+            android:icon="@drawable/agent"
+            android:id="@+id/officer">
+            <menu>
+                <item
+                    android:id="@+id/agent1"
+                    android:title="Sign up RICA Agent"
+                    android:icon="@drawable/a"
+                  />
+                <item
+                    android:id="@+id/agent2"
+                    android:title="Rica Customer Screen"
+                    android:icon="@drawable/b"
+                    />
+                <item
+                    android:id="@+id/agent3"
+                    android:title="Reset Password"
+                    android:icon="@drawable/ca"
+                   />
+                <item
+                    android:id="@+id/agent4"
+                    android:title="Last 10 Rica Customer"
+                    android:icon="@drawable/d"
+                    />
+                <item
+                    android:id="@+id/agent6"
+                    android:title="Last 10 RICA Agents"
+                    android:icon="@drawable/zz"/>
+                <item
+                    android:id="@+id/agent5"
+                    android:title="Logout"
+                    android:icon="@drawable/logout"/>
+            </menu>
+        </item>
+    </group>
+
+
+
+
+
+
+
+
+</menu>
